@@ -12,6 +12,7 @@ Installation
 * Change directory to **/cerb5/storage/plugins/**
 * `git clone git://github.com/cerb5-plugins/wgm.notifications.emailer.git`
 * In your helpdesk, enable the plugin from **Setup->Features & Plugins**.
+* In **Setup->Scheduler** enable the **Notifications Emailer** job.
 
 Credits
 -------
