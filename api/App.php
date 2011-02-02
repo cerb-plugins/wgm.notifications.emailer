@@ -17,7 +17,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 		// [TODO] This should use DAO
 		$workers_with_notifications = $db->GetArray(
 			sprintf("SELECT worker_id, count(id) AS hits ".
-				"FROM worker_event ".
+				"FROM notification ".
 				"WHERE created_date > %d ".
 				"AND is_read = 0 ".
 				"GROUP BY worker_id",
@@ -49,15 +49,15 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 			
 			$body .= sprintf("%s\n%s\n\n",
 				$helpdesk_title,
-				$url_writer->write('c=preferences&a=events', true)
+				$url_writer->write('c=profiles&k=worker&id=me&tab=notifications', true)
 			); 
 			
-			$notifications = DAO_WorkerEvent::getWhere(sprintf("%s = %d AND %s = %d AND %s > %d",
-				DAO_WorkerEvent::WORKER_ID,
+			$notifications = DAO_Notification::getWhere(sprintf("%s = %d AND %s = %d AND %s > %d",
+				DAO_Notification::WORKER_ID,
 				$worker_id,
-				DAO_WorkerEvent::IS_READ,
+				DAO_Notification::IS_READ,
 				0,
-				DAO_WorkerEvent::CREATED_DATE,
+				DAO_Notification::CREATED_DATE,
 				$last_checktime
 			));
 			
