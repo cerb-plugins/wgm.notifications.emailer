@@ -49,7 +49,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 			
 			$body .= sprintf("%s\n%s\n\n",
 				$helpdesk_title,
-				$url_writer->write('c=profiles&k=worker&id=me&tab=notifications', true)
+				$url_writer->writeNoProxy('c=profiles&k=worker&id=me&tab=notifications', true)
 			); 
 			
 			$notifications = DAO_Notification::getWhere(sprintf("%s = %d AND %s = %d AND %s > %d",
@@ -67,7 +67,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 					// [TODO] Make this public as a DevblocksPlatform::str___() function
 					_DevblocksTemplateManager::modifier_devblocks_prettytime($notification->created_date),
 					//$notification->url
-					$url_writer->write('c=preferences&a=redirectRead&id='.$notification->id, true)
+					$url_writer->writeNoProxy('c=preferences&a=redirectRead&id='.$notification->id, true)
 				);
 			}
 			
