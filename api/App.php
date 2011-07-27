@@ -42,9 +42,6 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 			);
 			$body = '';
 			
-//			var_dump($worker_id);
-//			var_dump($subject);
-
 			// [TODO] Decide if we're sending a short (IM/SMS) or long (email) notification
 			
 			$body .= sprintf("%s\n%s\n\n",
@@ -72,8 +69,6 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 			}
 			
 			CerberusMail::quickSend($worker->email, $subject, $body);
-			
-//			var_dump($body);
 		}
 		
 		// Persist
