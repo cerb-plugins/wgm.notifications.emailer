@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.devblocks.com/schema/plugin.xsd">
 	<id>wgm.notifications.emailer</id>
-	<name>[WGM] Notifications Emailer</name>
+	<name>Notifications Emailer</name>
 	<description>Send digests of new helpdesk notifications to workers through email.</description>
 	<author>WebGroup Media, LLC.</author>
 	<version>1.0.1</version>
