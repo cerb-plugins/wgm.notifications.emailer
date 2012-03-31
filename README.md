@@ -1,6 +1,6 @@
 Cerb5 Plugins - wgm.notifications.emailer
 ===========================================
-Copyright (C) 2011 WebGroup Media, LLC.  
+Copyright (C) 2012 WebGroup Media, LLC.  
 [http://www.cerberusweb.com/](http://www.cerberusweb.com/)  
 
 What's this?
