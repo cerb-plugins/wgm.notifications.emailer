@@ -2,22 +2,22 @@
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.devblocks.com/schema/plugin.xsd">
 	<id>wgm.notifications.emailer</id>
 	<name>Notifications Emailer</name>
-	<description>Send digests of new helpdesk notifications to workers through email.</description>
+	<description>This plugin automatically sends an email to workers if they have received new notifications.  It sends digests, so if you receive 100 new assignments you'll only receive a single email about them.</description>
 	<author>WebGroup Media, LLC.</author>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<link>http://www.cerb5.com/</link>
 	<image>plugin.png</image>
 
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="5.6" max="5.8.99" />
+		<app_version min="6.0" max="6.0.99" />
 	</requires>
  
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="5.3.0" />
+		<require plugin_id="cerberusweb.core" version="6.0.0-dev" />
 	</dependencies>
 
 	<!-- Patches -->
