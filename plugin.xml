@@ -4,51 +4,21 @@
 	<name>Notifications Emailer</name>
 	<description>This plugin automatically sends an email to workers if they have received new notifications.  It sends digests, so if you receive 100 new assignments you'll only receive a single email about them.</description>
 	<author>WebGroup Media, LLC.</author>
-	<version>1.0.3</version>
-	<link>http://www.cerb5.com/</link>
+	<version>1.0.4</version>
+	<link>http://www.cerbweb.com/book/latest/plugins/wgm.notifications.emailer.html</link>
 	<image>plugin.png</image>
 
 	<!-- Requirements -->
 
 	<requires>
-		<app_version min="6.0" max="6.0.99" />
+		<app_version min="6.1" max="6.1.99" />
 	</requires>
  
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="6.0.0-dev" />
+		<require plugin_id="cerberusweb.core" version="6.1.0" />
 	</dependencies>
-
-	<!-- Patches -->
-	
-	<patches>
-		<!--
-		<patch version="5.3.0" revision="1" file="patches/5.3.0.php" />
-		-->
-	</patches>
-	
-	<!-- Exported Classes -->
-	
-	<class_loader>
-		<!--
-		<file path="api/dao/example.php">
-			<class name="DAO_Example" />
-			<class name="Model_Example" />
-			<class name="Plugin_Example" />
-			<class name="SearchFields_Example" />
-			<class name="View_Example" />
-		</file>
-		-->
-	</class_loader>
-
-	<!-- Templates -->
-	
-	<!--
-	<templates set="example.template.namespace">
-		<template path="path/to/template.tpl" />
-	</templates>
-	-->	
 
 	<!-- Extensions -->
  

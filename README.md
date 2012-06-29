@@ -1,4 +1,4 @@
-Cerb5 Plugins - wgm.notifications.emailer
+Cerb Plugins - wgm.notifications.emailer
 ===========================================
 Copyright (C) 2012 WebGroup Media, LLC.  
 [http://www.cerberusweb.com/](http://www.cerberusweb.com/)  
@@ -10,7 +10,7 @@ This plugin automatically sends an email to workers if they have received new no
 Installation
 ------------
 * Change directory to **/cerb6/storage/plugins/**
-* `git clone git://github.com/cerb6-plugins/wgm.notifications.emailer.git`
+* `git clone git://github.com/cerb-plugins/wgm.notifications.emailer.git`
 * In your helpdesk, enable the plugin from **Setup->Features & Plugins**.
 * In **Setup->Scheduler** enable the **Notifications Emailer** job.
 
