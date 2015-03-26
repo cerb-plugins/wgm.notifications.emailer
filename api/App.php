@@ -15,7 +15,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 		$workers = DAO_Worker::getAllActive();
 		
 		// [TODO] This should use DAO
-		$workers_with_notifications = $db->GetArray(
+		$workers_with_notifications = $db->GetArraySlave(
 			sprintf("SELECT worker_id, count(id) AS hits ".
 				"FROM notification ".
 				"WHERE created_date > %d ".
