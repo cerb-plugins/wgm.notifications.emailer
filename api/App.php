@@ -35,7 +35,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 			if(null == ($worker = @$workers[$worker_id]))
 				continue;
 			
-			$subject = sprintf("You have %d new notification%s on %s.",
+			$subject = sprintf("You have %d new notification%s on %s",
 				$count,
 				(1==$count ? '' : 's'),
 				$helpdesk_title
@@ -47,7 +47,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 			$body .= sprintf("%s\n%s\n\n",
 				$helpdesk_title,
 				$url_writer->writeNoProxy('c=profiles&k=worker&id=me&tab=notifications', true)
-			); 
+			);
 			
 			$notifications = DAO_Notification::getWhere(sprintf("%s = %d AND %s = %d AND %s > %d",
 				DAO_Notification::WORKER_ID,
@@ -56,14 +56,15 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 				0,
 				DAO_Notification::CREATED_DATE,
 				$last_checktime
-			));
+			), DAO_Notification::CREATED_DATE, false);
 			
-			foreach($notifications as $notification_id => $notification) { /* @var $notification Model_WorkerEvent */
+			if(is_array($notifications))
+			foreach($notifications as $notification_id => $notification) { /* @var $notification Model_Notification */
+				$entry = json_decode($notification->entry_json, true);
+				
 				$body .= sprintf("%s (%s)\n%s\n\n",
-					$notification->message,
-					// [TODO] Make this public as a DevblocksPlatform::str___() function
-					_DevblocksTemplateManager::modifier_devblocks_prettytime($notification->created_date),
-					//$notification->url
+					CerberusContexts::formatActivityLogEntry($entry,'text'),
+					DevblocksPlatform::strPrettyTime($notification->created_date),
 					$url_writer->writeNoProxy('c=preferences&a=redirectRead&id='.$notification->id, true)
 				);
 			}
