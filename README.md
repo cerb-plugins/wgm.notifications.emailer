@@ -1,7 +1,7 @@
 Cerb Plugins - wgm.notifications.emailer
 ===========================================
 Copyright (C) 2012 Webgroup Media, LLC.  
-[http://www.cerberusweb.com/](http://www.cerberusweb.com/)  
+[http://cerb.io/](http://cerb.io/)  
 
 What's this?
 ------------
