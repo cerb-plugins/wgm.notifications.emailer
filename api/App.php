@@ -3,9 +3,9 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 	const ID = 'wgm.notifications.emailer.cron';
 	
 	public function run() {
-		$logger = DevblocksPlatform::getConsoleLog('Notifications Emailer');
-		$db = DevblocksPlatform::getDatabaseService();
-		$url_writer = DevblocksPlatform::getUrlService();
+		$logger = DevblocksPlatform::services()->log('Notifications Emailer');
+		$db = DevblocksPlatform::services()->database();
+		$url_writer = DevblocksPlatform::services()->url();
 		
 		$logger->info("Started");
 		
@@ -79,7 +79,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 	}
 	
 	public function configure($instance) {
-		$tpl = DevblocksPlatform::getTemplateService();
+		$tpl = DevblocksPlatform::services()->template();
 		$tpl->cache_lifetime = "0";
 		//$tpl->display('devblocks:wgm.notifications.emailer::cron/config.tpl');
 	}
