@@ -65,7 +65,7 @@ class WgmNotifEmailerCron extends CerberusCronPageExtension {
 				$body .= sprintf("%s (%s)\n%s\n\n",
 					CerberusContexts::formatActivityLogEntry($entry,'text'),
 					DevblocksPlatform::strPrettyTime($notification->created_date),
-					$url_writer->writeNoProxy('c=preferences&a=redirectRead&id='.$notification->id, true)
+					$url_writer->writeNoProxy('c=internal&a=redirectRead&id='.$notification->id, true)
 				);
 			}
 			
